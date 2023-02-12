@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script>
+      function checkLogin() {
+        // Verifica se o usuário está logado
+        var isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+        if (!isLoggedIn) {
+          // Redireciona para a tela de login se o usuário não estiver logado
+          window.location.href = "/login.html";
+        }
+      };
+
+      function logout() {
+    // Remove a informação de que o usuário está logado
+    localStorage.setItem("isLoggedIn", "false");
+    // Redireciona para a tela de login
+    window.location.href = "/login.html";
+  }
+
+    </script>
+  </head>
+  <body onload="checkLogin()">
+   <h1>Hello World!</h1>
+   <button onclick="logout()">Logout</button>
+  </body>
+</html>
